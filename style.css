@@ -11,7 +11,7 @@
 .footer {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #312e81 100%);
     color: var(--text-light);
-    padding: 3rem 0 2rem;
+    padding: 2rem 0 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
@@ -170,6 +170,7 @@ nav.scrolled {
 
 .nav-container {
     max-width: 1400px;
+    max-height: 25px; /*change this for nav bar size*/
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -186,6 +187,11 @@ nav.scrolled {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.5px;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
 }
 
 .nav-links {
@@ -619,6 +625,45 @@ section {
     transform: translateX(-50%);
     border-radius: 2px;
 }
+/* Social Section */
+.social-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 500;
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-md);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-item img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(1) drop-shadow(0 0 5px rgba(255,255,255,0.3));
+}
+
+.social-item:hover {
+    transform: translateY(-6px) scale(1.03);
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: var(--shadow-lg);
+}
+
 
 /* About Section */
 .about {
@@ -741,6 +786,8 @@ section {
 }
 
 .services-item {
+    display: flex;
+    flex-direction: column;
     background: var(--bg-card);
     border-radius: 25px;
     overflow: hidden;
@@ -750,6 +797,8 @@ section {
     opacity: 0;
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
+
+    height: 100%;
 }
 
 .services-item.animate {
@@ -773,27 +822,27 @@ section {
 }
 
 .services-item:nth-child(1) .services-image {
-    background-image: url('https://picsum.photos/1920/1083');
+    background-image: url('images/windows.jpg');
 }
 
 .services-item:nth-child(2) .services-image {
-    background-image: url('https://picsum.photos/1920/1080');
+    background-image: url('images/cleaning.jpg');
 }
 
 .services-item:nth-child(3) .services-image {
-    background-image: url('https://picsum.photos/1920/1082');
+    background-image: url('images/door.jpg');
 }
 
 .services-item:nth-child(4) .services-image {
-    background-image: url('https://picsum.photos/1920/1081');
+    background-image: url('images/android.jpg');
 }
 
 .services-item:nth-child(5) .services-image {
-    background-image: url('https://picsum.photos/1920/1087');
+    background-image: url('images/hdd.jpg');
 }
 
 .services-item:nth-child(6) .services-image {
-    background-image: url('https://picsum.photos/1920/1085');
+    background-image: url('images/logo.png');
 }
 
 .services-image::before {
@@ -813,6 +862,8 @@ section {
 
 .services-content {
     padding: 2rem;
+    flex-grow: 1;
+    flex-direction: column;
 }
 
 .services-content h4 {
@@ -849,6 +900,35 @@ section {
     background: var(--primary-color);
     color: var(--text-light);
 }
+
+.service-links {
+    list-style: none;
+    margin-top: auto;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.service-links li {
+    margin-top: 0.5rem;
+}
+
+.service-links a {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 20px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.service-links a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+
 
 /* Contact Section */
 .contact {
@@ -1205,6 +1285,18 @@ section {
     }
 }
 
+/* Mobile social*/
+@media (max-width: 600px) {
+    .social-item {
+        font-size: 1rem;
+        padding: 0.9rem 1.3rem;
+    }
+
+    .social-item img {
+        width: 28px;
+        height: 28px;
+    }
+}
 
 
 .form-warning {
